@@ -88,7 +88,7 @@
 
 // Function so that each feature can have a popup and mouse hover events	
 	function onEachFeature(feature, layer) {
-		if ( feature.properties.SA2_NAME16 !== null ) {
+		if ( feature.properties.mSML !== null ) {
 			layer.bindPopup(
 				"<div align=\"center\"><h3>" + feature.properties.SA2_NAME16 + "</div></h3>" +
 				
@@ -151,11 +151,11 @@
 					mouseout: resetHighlight
 			});
 		};
-		if ( feature.properties.SA2_NAME16 == null ) {
+		if ( feature.properties.mSML == null ) {
 					layer.bindPopup(
 						"<div align=\"center\"><h3>" + feature.properties.SA2_NAME16 + "</div></h3>" +
 						
-						"<div align=\"center\">(An index was not calculated for this region due to missing data)</div>"
+						"<div align=\"center\">(A Suitability for Machine Learning Score was not calculated due to insufficient data)</div>"
 					, {'maxWidth': '500'});
 		};
 	};
